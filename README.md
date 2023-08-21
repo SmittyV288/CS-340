@@ -1,1 +1,10 @@
 # CS-340
+
+- How do you write programs that are maintainable, readable, and adaptable? Especially consider your work on the CRUD Python module from Project One, which you used to connect the dashboard widgets to the database in Project Two. What were the advantages of working in this way? How else could you use this CRUD Python module in the future?
+    - I write programs that are maintainable, readable, and adaptable by using clear naming conventions, writing clear code comments, and using modular functions. The advantages of working with the CRUD module is that it abstracted the database operations. It also promoted code reusability and reduced redundancy across different components of the project. I could use this for projects in the future if the project deals with a website that interacts with a different database. I could adapt the module to work with the new database while using the same interface. 
+
+- How do you approach a problem as a computer scientist? Consider how you approached the database or dashboard requirements that Grazioso Salvare requested. How did your approach to this project differ from previous assignments in other courses? What techniques or strategies would you use in the future to create databases to meet other client requests?
+    - I approach a problem as a computer scientist by analyzing it and figuring out how to design it to work. My approach didn’t differ too much from previous courses. I had to read more documentation than I usually do to get a grasp on what needed to be done for the project. I would make sure I fully understand the requirements of the client so I can determine the right tools to use to meet their needs. 
+  
+- What do computer scientists do, and why does it matter? How would your work on this type of project help a company, like Grazioso Salvare, to do their work better?
+    - Computer scientists solve complex problems using different tools and techniques. My work would help a company like Grazioso Salvare do their work better by providing them with an interactive dashboard that streamlines their operations. 
