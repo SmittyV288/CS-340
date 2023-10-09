@@ -27,21 +27,22 @@ mv mongoshrc.js ~/.mongoshrc
 echo 'source ~/Desktop/mongodb-env' >> ~/.bashrc
 source ~/.bashrc
 
-
 # start mongo server
-sudo mongod --port 27017 --dbpath /var/lib/mongodb
+sudo mongod --port 27017 --dbpath /var/lib/mongodb &  # Start MongoDB in the background
 
+# Sleep for a moment to ensure that MongoDB has started
 sleep 5
 
-# start mongosh in new terminal
-gnome-terminal -- mongosh << EOF
+# start mongosh in a new terminal
+gnome-terminal -- mongosh --port 27017 << EOF
 use admin
 db.createUser({user: "root", pwd: "password", roles: [{role: "root", db: "admin"}]})
 db.adminCommand({shutdown: 1})
 exit
 EOF
 
+# Update MongoDB config to enable authentication
 sudo sed -i 's/#security:/security:\n  authorization: enabled/' /etc/mongod.conf
 
-# start mongo server with auth
-gnome-terminal -- base -c "sudo mongod --auth --port 27017 --dbpath /var/lib/mongodb"
+# Start mongo server with auth in a new terminal
+gnome-terminal -- sudo mongod --auth --port 27017 --dbpath /var/lib/mongodb
