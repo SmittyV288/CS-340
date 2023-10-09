@@ -20,8 +20,8 @@ cd datasets
 sudo mv * /usr/local/datasets
 cd ~/Downloads/mongo
 # move mongodb files
-mv mongodb-env ~/Desktop
-mv mongoshrc.js ~/.mongoshrc
+mv mongodb-env.txt ~/Desktop
+mv mongoshrc.js ~/.mongoshrc.js
 
 # Run source mongodb env for each terminal
 echo 'source ~/Desktop/mongodb-env' >> ~/.bashrc
