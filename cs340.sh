@@ -35,7 +35,7 @@ sudo mongod --port 27017 --dbpath /var/lib/mongodb &  # Start MongoDB in the bac
 sleep 5
 
 # start mongosh in a new terminal
-gnome-terminal -- bash-c "source ~/Desktop/mongodb-env.txt && mongosh --port 27017"<< EOF
+gnome-terminal -- bash -c "source ~/Desktop/mongodb-env.txt && mongosh --port 27017"<< EOF
 use admin
 db.createUser({user: "root", pwd: "password", roles: [{role: "root", db: "admin"}]})
 db.adminCommand({shutdown: 1})
