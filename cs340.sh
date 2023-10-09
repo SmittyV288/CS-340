@@ -35,6 +35,7 @@ sudo mongod --port 27017 --dbpath /var/lib/mongodb &  # Start MongoDB in the bac
 sleep 5
 
 # start mongosh in a new terminal
+source ~/Desktop/mongodb-env.txt
 gnome-terminal -- mongosh --port 27017 << EOF
 use admin
 db.createUser({user: "root", pwd: "password", roles: [{role: "root", db: "admin"}]})
