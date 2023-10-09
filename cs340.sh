@@ -26,7 +26,6 @@ sudo mv * /usr/local/datasets
 cd ~/Downloads/mongo
 # move mongodb files
 mv mongodb-env.txt ~/Desktop
-mv mongoshrc.js ~/.mongoshrc.js
 
 # start mongo server
 sudo mongod --port 27017 --dbpath /var/lib/mongodb &  # Start MongoDB in the background
@@ -43,6 +42,9 @@ echo 'db.adminCommand({shutdown: 1})' >> mongosh_script.js
 gnome-terminal -- mongosh --port 27017 --shell mongosh_script.js
 
 wait
+
+cd ~/Downloads/mongo
+mv mongoshrc.js ~/.mongoshrc.js
 
 # Update MongoDB config to enable authentication
 sudo sed -i 's/#security:/security:\n  authorization: enabled/' /etc/mongod.conf
