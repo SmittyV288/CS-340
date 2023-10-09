@@ -1,4 +1,5 @@
 #!/bin/bash
+# Make sure MongoDB, Mongo Shell, and Mongo Database Tools are downloaded and match the packages in this file. 
 
 # Run source mongodb env for each terminal
 echo 'source ~/Desktop/mongodb-env.txt' >> ~/.bashrc
