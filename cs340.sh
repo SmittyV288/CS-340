@@ -33,13 +33,20 @@ sudo mongod --port 27017 --dbpath /var/lib/mongodb &  # Start MongoDB in the bac
 # Sleep for a moment to ensure that MongoDB has started
 sleep 5
 
-# Create a script with MongoDB commands
-echo 'use admin' > mongosh_script.js
-echo 'db.createUser({user: "root", pwd: "password", roles: [{role: "root", db: "admin"}]})' >> mongosh_script.js
-echo 'db.adminCommand({shutdown: 1})' >> mongosh_script.js
+# Create a shell script with MongoDB commands
+echo '#!/bin/bash' > mongosh_script.sh
+echo 'mongosh --port 27017 << EOF' >> mongosh_script.sh
+echo 'use admin' >> mongosh_script.sh
+echo 'db.createUser({user: "root", pwd: "password", roles: [{role: "root", db: "admin"}]})' >> mongosh_script.sh
+echo 'db.adminCommand({shutdown: 1})' >> mongosh_script.sh
+echo 'exit' >> mongosh_script.sh
+echo 'EOF' >> mongosh_script.sh
 
-# Start mongosh with the script in a new terminal
-gnome-terminal -- mongosh --port 27017 --shell mongosh_script.js
+# Make the shell script executable
+chmod +x mongosh_script.sh
+
+# Start mongosh in a new terminal using the shell script
+gnome-terminal -- ./mongosh_script.sh
 
 wait
 
