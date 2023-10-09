@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Run source mongodb env for each terminal
+echo 'source ~/Desktop/mongodb-env.txt' >> ~/.bashrc
+source ~/.bashrc
+
+
 # Install packages
 sudo apt install -y python3-pip
 python3 -m pip install pymongo
@@ -22,10 +27,6 @@ cd ~/Downloads/mongo
 # move mongodb files
 mv mongodb-env.txt ~/Desktop
 mv mongoshrc.js ~/.mongoshrc.js
-
-# Run source mongodb env for each terminal
-echo 'source ~/Desktop/mongodb-env.txt' >> ~/.bashrc
-source ~/.bashrc
 
 # start mongo server
 sudo mongod --port 27017 --dbpath /var/lib/mongodb &  # Start MongoDB in the background
