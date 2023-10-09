@@ -6,7 +6,6 @@
 echo 'source ~/Desktop/mongodb-env.txt' >> ~/.bashrc
 source ~/.bashrc
 
-
 # Install packages
 sudo apt install -y python3-pip
 python3 -m pip install pymongo
