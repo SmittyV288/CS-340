@@ -1,5 +1,6 @@
 #!/bin/bash
 # Make sure MongoDB, Mongo Shell, and Mongo Database Tools are downloaded and match the packages in this file. 
+# Change 
 
 # Run source mongodb env for each terminal
 echo 'source ~/Desktop/mongodb-env.txt' >> ~/.bashrc
@@ -38,6 +39,7 @@ sleep 5
 echo '#!/bin/bash' > mongosh_script.sh
 echo 'mongosh --port 27017 << EOF' >> mongosh_script.sh
 echo 'use admin' >> mongosh_script.sh
+# Change password here and in mongodb-env file, located in mongo folder. 
 echo 'db.createUser({user: "root", pwd: "password", roles: [{role: "root", db: "admin"}]})' >> mongosh_script.sh
 echo 'db.adminCommand({shutdown: 1})' >> mongosh_script.sh
 echo 'exit' >> mongosh_script.sh
