@@ -24,7 +24,7 @@ mv mongodb-env.txt ~/Desktop
 mv mongoshrc.js ~/.mongoshrc.js
 
 # Run source mongodb env for each terminal
-echo 'source ~/Desktop/mongodb-env' >> ~/.bashrc
+echo 'source ~/Desktop/mongodb-env.txt' >> ~/.bashrc
 source ~/.bashrc
 
 # start mongo server
