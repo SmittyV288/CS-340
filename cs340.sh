@@ -42,6 +42,8 @@ db.adminCommand({shutdown: 1})
 exit
 EOF
 
+wait
+
 # Update MongoDB config to enable authentication
 sudo sed -i 's/#security:/security:\n  authorization: enabled/' /etc/mongod.conf
 
